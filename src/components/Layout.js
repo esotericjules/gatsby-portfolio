@@ -1,13 +1,19 @@
 import React from "react"
 // import "../css/main.css"
 import Navbar from "./Navbar"
-import Sidebar from "./Sidebar"
-import Footer from "./Footer"
+import SideNav from "./SideNav"
+import Content from "./Content"
+
 const Layout = ({ children }) => {
   return (
-    <>
-      <h2>layout component</h2>
-    </>
+    <section className={"layout"}>
+      <SideNav/>
+      <Content />
+      {/*<div className={"main-content"}>*/}
+      {/*  {children}*/}
+      {/*</div>*/}
+    
+    </section>
   )
 }
 

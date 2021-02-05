@@ -1,0 +1,38 @@
+.layout {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  gap: 20px;
+}
+
+.layout > * {
+  grid-column: col-start / span 12;
+}
+
+.sidebar {
+  grid-column: col-start / span 2;
+}
+
+.content {
+  grid-column: col-start 3/ span 10;
+}
+
+//.content {
+//  grid-area: content;
+//}
+//
+//.sidebar {
+//  grid-area: sidebar
+//}
+//
+//.footer {
+//  grid-area: footer
+//}
+
+//.main-content {
+//  //background-color: #fff;
+//
+//  flex: 1;
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: space-between;
+//}

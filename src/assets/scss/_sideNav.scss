@@ -1,0 +1,74 @@
+.sidebar {
+  font-family: Josefin Slab, serif;
+  height: 100vh;
+  font-size: 0.8rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position:  relative;
+
+
+  &::before {
+    width: 1px;
+    height: inherit;
+    position: fixed;
+    top: 0;
+    left: 15%;
+    background: $white--04;
+    content: '';
+  }
+
+  &__nav {
+    position: fixed;
+    font-weight: bold;
+
+    ul {
+      list-style: none;
+
+
+      li {
+        margin: 3.2em 0;
+
+        a {
+          line-height: 5em;
+          text-transform: uppercase;
+          text-decoration: none;
+          letter-spacing: 0.4em;
+          color: $white--03;
+          display: block;
+          transition: all ease-out 300ms;
+        }
+
+        &.active a {
+          color: $white--01;;
+
+          &::before {
+            content: '';
+            border-left: 3px solid $white--01;;
+            height: 30px;
+            position: absolute;
+            transform: translate(-10px, 0px);
+          }
+
+          &:hover {
+            transform: scale(1.5);
+          }
+        }
+
+        &:not(.active)::after {
+          opacity: 0.2;
+        }
+
+        &:not(.active):hover a {
+          color: $white--01;
+          transform: scale(1.5);
+        }
+
+      }
+    }
+  }
+}
+
+
