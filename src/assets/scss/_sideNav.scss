@@ -7,17 +7,16 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position:  relative;
-
+  position: relative;
 
   &::before {
     width: 1px;
     height: inherit;
     position: fixed;
     top: 0;
-    left: 15%;
-    background: $white--04;
-    content: '';
+    left: 14.5%;
+    background: $white--02;
+    content: "";
   }
 
   &__nav {
@@ -26,7 +25,6 @@
 
     ul {
       list-style: none;
-
 
       li {
         margin: 3.2em 0;
@@ -42,11 +40,11 @@
         }
 
         &.active a {
-          color: $white--01;;
+          color: $white--01;
 
           &::before {
-            content: '';
-            border-left: 3px solid $white--01;;
+            content: "";
+            border-left: 3px solid $white--01;
             height: 30px;
             position: absolute;
             transform: translate(-10px, 0px);
@@ -65,10 +63,7 @@
           color: $white--01;
           transform: scale(1.5);
         }
-
       }
     }
   }
 }
-
-

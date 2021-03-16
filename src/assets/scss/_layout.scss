@@ -1,7 +1,8 @@
 .layout {
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
-  gap: 20px;
+  overflow-x: hidden;
+  // gap: 20px;
 }
 
 .layout > * {
@@ -13,7 +14,7 @@
 }
 
 .content {
-  grid-column: col-start 3/ span 10;
+  grid-column: col-start 3 / span 10;
 }
 
 //.content {
