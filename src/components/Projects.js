@@ -8,6 +8,7 @@ const Projects = () => {
     <section className="projects">
       <SectionTitle title={"Projects"} />
       <Project />
+      <Project />
     </section>
   )
 }

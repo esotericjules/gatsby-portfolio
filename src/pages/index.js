@@ -5,14 +5,16 @@ import Hero from "../components/Hero"
 import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
 import "../assets/scss/style.scss"
-
+import { ProjectProvider } from "../context/projectContext"
 
 export default () => {
   return (
     <>
-      <Layout>
-        <Hero />
-      </Layout>
+      <ProjectProvider>
+        <Layout>
+          <Hero />
+        </Layout>
+      </ProjectProvider>
     </>
   )
 }

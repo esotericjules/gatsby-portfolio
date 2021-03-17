@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext, useState } from "react"
 import PropTypes from "prop-types"
 import Image from "gatsby-image"
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
@@ -12,42 +12,81 @@ import BDA7 from "../assets/BDA/bda-7.png"
 import ProjectImages from "./reusable-components/project-images"
 import { data, projectDescriptionData } from "../constants/image-data"
 import ProjectDescription from "./reusable-components/project-description"
+import ProjectContext from "../context/projectContext"
 
 const Project = () => {
+  const [holdClass, setHoldClass] = useState("")
+  const value = useContext(ProjectContext)
+  console.log(value)
+
   function mouseEnter(e) {
-    let targetElement = e.target
-    let parentContainer = document.querySelector(".project__images")
+    // get the element that fired the event listener
+    let targetElement = e.currentTarget
+
+    //get the element that is wrapping the target element's parent element
+    let grandParent = targetElement.parentElement.parentElement
+
+    // get the immediate parent element of the target element
     let directParent = targetElement.parentElement
-    directParent.classList.remove("project__images-child")
 
-    let children = document.getElementsByClassName("project__images-child")
-    parentContainer.style.display = "block"
+    //store the className of the direct parent in classToRemove variable and holdClass variable in state. This classname controls the elements position in the grid.
+    let classToRemove = directParent.classList[1]
+    setHoldClass(classToRemove)
+    // holdClass = classToRemove
+
+    //reomove the classname that controls the elements positon in the grid and add another className that will change it's position in the grid.
+    directParent.classList.remove(classToRemove)
+    directParent.classList.add("project__hovered-image")
+
+    // remove the className that controls how the image is displayed inside its parent container and add another className that will change it's display, from cover to contain
+    directParent.firstElementChild.classList.remove("project__images-img")
+    directParent.firstElementChild.classList.add("project__hovered-img")
+
+    // Get all the child elements of the grandParent
+    let children = grandParent.children
+
+    // Loop through all the children, set the opacity of all the children except the current hovered element to 0.
     for (let i = 0; i < children.length; i++) {
-      children[i].style.display = "none"
+      if (children[i].classList.contains("project__hovered-image")) {
+        children[i].style.opacity = 1
+      } else {
+        children[i].style.opacity = 0
+      }
     }
-
-    targetElement.classList.add("project__images-hovered")
   }
 
   function imageMouseOut(e) {
-    let targetElement = e.target
-    let parentContainer = document.querySelector(".project__images")
+    // get the element that fired the event listener
+    let targetElement = e.currentTarget
+
+    //get the element that is wrapping the target element's parent element
+    let grandParent = targetElement.parentElement.parentElement
+
+    // get the immediate parent element of the target element
     let directParent = targetElement.parentElement
-    parentContainer.style.display = "grid"
 
-    let children = document.getElementsByClassName("project__images-child")
+    // Add back the className that was removed from the directParent and remove the className that was added on mouseIn
+    directParent.classList.add(holdClass)
+    directParent.classList.remove("project__hovered-image")
+
+    // add the className that controls how the image is displayed inside its parent container and remove the  className that was added to change it's display, from cover to contain
+    directParent.firstElementChild.classList.add("project__images-img")
+    directParent.firstElementChild.classList.remove("project__hovered-img")
+
+    // Get all the child elements of the grandParent
+    let children = grandParent.children
+
+    // Loop through all the children, set their opacity to 1.
     for (let i = 0; i < children.length; i++) {
-      children[i].style.display = "block"
+      children[i].style.opacity = 1
     }
-
-    directParent.classList.add("project__images-child")
-    targetElement.classList.remove("project__images-hovered")
-    // e.target.classList.add("project__images-child")
   }
+
   return (
     <div className="project">
       <h3 className={"project__title"}>EPIBS</h3>
       <div className={"project__container"}>
+        {/* <h1>{value}</h1> */}
         {/* <ProjectImages /> */}
         <ProjectImages
           data={data.bda}
@@ -55,6 +94,7 @@ const Project = () => {
           imageMouseOut={imageMouseOut}
         />
         <ProjectDescription data={projectDescriptionData.bda} />
+
         {/* <div className="project__images project__child">
           <figure className="project__images-child project__images-child--1">
             <img
@@ -119,9 +159,9 @@ const Project = () => {
               onMouseLeave={e => imageMouseOut(e)}
             />
           </figure>
-        </div> */}
+        </div>
 
-        {/* <div className=" project__child  project__descriptions">
+        <div className=" project__child  project__descriptions">
           <p className="project__descriptions-description">
             EPIBS is an extensive billing and payment settlement suite, that
             provides transparency and business accountability, which results in
