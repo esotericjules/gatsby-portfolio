@@ -5,7 +5,7 @@ import SectionTitle from "./reusable-components/section-title"
 
 const Skills = () => {
   return (
-    <section className="skills">
+    <section className="skills" tabIndex={0}>
       <SectionTitle title={"Skills"} />
       <div className="skills__wrapper">
         <div className="skills__card-container">

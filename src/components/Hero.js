@@ -9,7 +9,7 @@ import profileImage from "../assets/hero-img-6.png"
 let greeting = "Hello"
 const Hero = () => {
   return (
-    <section className={"hero"}>
+    <section className={"hero"} tabIndex={0}>
       <div className={"hero-message"}>
         {/* <h1>Hello, </h1> */}
         <h1 className="hero-message__hello">

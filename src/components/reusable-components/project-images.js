@@ -6,10 +6,11 @@ export default ({ data, mouseEnter, imageMouseOut }) => {
   const { imageData } = value
   console.log(value)
   return (
-    <div className={"project__images project__child"}>
+    <div className={"project__images project__child"} tabIndex={0}>
       {data.map(img => {
         return (
           <figure
+            tabIndex={0}
             className={`project__images-child project__images-child--${img.id}`}
             key={img.id}
             // onMouseEnter={e => mouseEnter(e)}
@@ -17,7 +18,7 @@ export default ({ data, mouseEnter, imageMouseOut }) => {
           >
             <img
               src={img.src}
-              alt={`BDA ${img.id}`}
+              alt={img.alt}
               className="project__images-img"
               onMouseEnter={e => mouseEnter(e)}
               onMouseLeave={e => imageMouseOut(e)}

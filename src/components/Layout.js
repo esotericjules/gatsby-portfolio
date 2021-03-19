@@ -6,13 +6,12 @@ import Content from "./Content"
 
 const Layout = ({ children }) => {
   return (
-    <section className={"layout"}>
-      <SideNav/>
+    <section className={"layout"} tabIndex={0}>
+      {/* <SideNav /> */}
       <Content />
       {/*<div className={"main-content"}>*/}
       {/*  {children}*/}
       {/*</div>*/}
-    
     </section>
   )
 }

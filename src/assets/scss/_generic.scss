@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  outline: 0;
 }
 
 *,
@@ -14,14 +15,12 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
-
+  padding: 3rem;
 }
 
 body {
   margin: 0;
-  background-color:  $black;
+  background-color: #000;
   color: $white--01;
   font-family: Cinzel Decoratice, serif;
-
 }
-

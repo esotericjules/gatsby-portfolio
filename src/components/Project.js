@@ -9,12 +9,15 @@ import BDA4 from "../assets/BDA/bda-4.png"
 import BDA5 from "../assets/BDA/bda-5.png"
 import BDA6 from "../assets/BDA/bda-6.png"
 import BDA7 from "../assets/BDA/bda-7.png"
+import BDAMOCKUP1 from "../assets/BDA/bda-mockup-1.1.jpg"
+import AvicollectMockup1 from "../assets/Avicollect/avicollect-mockup-1.jpg"
 import ProjectImages from "./reusable-components/project-images"
-import { data, projectDescriptionData } from "../constants/image-data"
+import { data, projectDescriptionData, newData } from "../constants/image-data"
 import ProjectDescription from "./reusable-components/project-description"
 import ProjectContext from "../context/projectContext"
+import { ProjectLeft } from "./reusable-components/project-left"
 
-const Project = () => {
+const Project = ({ title, img, link, projectDescriptionData, children }) => {
   const [holdClass, setHoldClass] = useState("")
   const value = useContext(ProjectContext)
   console.log(value)
@@ -83,104 +86,69 @@ const Project = () => {
   }
 
   return (
-    <div className="project">
-      <h3 className={"project__title"}>EPIBS</h3>
-      <div className={"project__container"}>
-        {/* <h1>{value}</h1> */}
-        {/* <ProjectImages /> */}
+    <div className="project" tabIndex={0}>
+      {children}
+      {/* <div className="project__right">
+        <span className="project__right-title">Avicollect</span>
+        <div className="project__right-card">
+          <div className="project__right-card__items-wrapper">
+            <div className="project__right-card__description">
+              <ProjectDescription data={projectDescriptionData.bda} />
+            </div>
+            <div className="project__right-card__thumbnail">
+              <img
+                src={BDAMOCKUP1}
+                alt=""
+                className="project__right-card__thumbnail-img"
+              />
+            </div>
+          </div>
+          <div>
+            <div className="project__link">
+              <a
+                href={"https://bdaweb.prod.vggdev.com/"}
+                target="blank"
+                className="project__btn-link"
+              >
+                Visit Site &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+      {/* <ProjectLeft
+        title={title}
+        img={img}
+        projectDescriptionData={projectDescriptionData}
+        link={link}
+      /> */}
+
+      {/* <ProjectRight
+        title={title}
+        img={img}
+        projectDescriptionData={projectDescriptionData}
+        link={link}
+      /> */}
+
+      {/* <div className="project__header">
+        <h3 className={"project__title"}>{projectName}</h3>
+        <a
+          href="https://bdaweb.prod.vggdev.com/"
+          target="blank"
+          className="project__btn-link"
+        >
+          Visit Site &rarr;
+        </a>
+      </div> */}
+      {/* <div className={"project__container"}>
         <ProjectImages
-          data={data.bda}
+          data={data}
           mouseEnter={mouseEnter}
           imageMouseOut={imageMouseOut}
         />
         <ProjectDescription data={projectDescriptionData.bda} />
-
-        {/* <div className="project__images project__child">
-          <figure className="project__images-child project__images-child--1">
-            <img
-              src={BDA1}
-              alt="BDA Image 1"
-              className="project__images-img"
-              onMouseEnter={e => mouseEnter(e)}
-              onMouseLeave={e => imageMouseOut(e)}
-            />
-          </figure>
-          <figure className="project__images-child project__images-child--2">
-            <img
-              src={BDA2}
-              alt="BDA Image 2"
-              className="project__images-img"
-              onMouseEnter={e => mouseEnter(e)}
-              onMouseLeave={e => imageMouseOut(e)}
-            />
-          </figure>
-          <figure className="project__images-child project__images-child--3">
-            <img
-              src={BDA3}
-              alt="BDA Image 3"
-              className="project__images-img"
-              onMouseEnter={e => mouseEnter(e)}
-              onMouseLeave={e => imageMouseOut(e)}
-            />
-          </figure>
-          <figure className="project__images-child project__images-child--4">
-            <img
-              src={BDA4}
-              alt="BDA Image 4"
-              className="project__images-img"
-              onMouseEnter={e => mouseEnter(e)}
-              onMouseLeave={e => imageMouseOut(e)}
-            />
-          </figure>
-          <figure className="project__images-child project__images-child--5">
-            <img
-              src={BDA5}
-              alt="BDA Image 5"
-              className="project__images-img"
-              onMouseEnter={e => mouseEnter(e)}
-              onMouseLeave={e => imageMouseOut(e)}
-            />
-          </figure>
-          <figure className="project__images-child project__images-child--6">
-            <img
-              src={BDA6}
-              alt="BDA Image 6"
-              className="project__images-img"
-              onMouseEnter={e => mouseEnter(e)}
-              onMouseLeave={e => imageMouseOut(e)}
-            />
-          </figure>
-          <figure className="project__images-child project__images-child--7">
-            <img
-              src={BDA7}
-              alt="BDA Image 7"
-              className="project__images-img"
-              onMouseEnter={e => mouseEnter(e)}
-              onMouseLeave={e => imageMouseOut(e)}
-            />
-          </figure>
-        </div>
-
-        <div className=" project__child  project__descriptions">
-          <p className="project__descriptions-description">
-            EPIBS is an extensive billing and payment settlement suite, that
-            provides transparency and business accountability, which results in
-            increased cash flow as well as better business intelligence for
-            Ministries, Departments and Agencies.
-          </p>
-          <p className="project__descriptions-description">
-            I worked as the frontend lead in this project and was responsible
-            for ensuring an efficient workflow between the front-end and
-            back-end engineers. I built the Invoicing Module, Settings Modules.
-          </p>
-          <p className="project__descriptions-description">
-            A major challenge I experienced in this project was having to make
-            constant iterations due to incomplete/unclear business requirements
-            at the inception of the project. However as the project progressed
-            iterations that had to be done reduced.
-          </p>
-        </div> */}
-      </div>
+      </div> */}
     </div>
   )
 }
