@@ -2,14 +2,6 @@ import React, { useContext, useState } from "react"
 import PropTypes from "prop-types"
 import Image from "gatsby-image"
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
-import BDA1 from "../assets/BDA/bda-1.png"
-import BDA2 from "../assets/BDA/bda-2.png"
-import BDA3 from "../assets/BDA/bda-3.png"
-import BDA4 from "../assets/BDA/bda-4.png"
-import BDA5 from "../assets/BDA/bda-5.png"
-import BDA6 from "../assets/BDA/bda-6.png"
-import BDA7 from "../assets/BDA/bda-7.png"
-import BDAMOCKUP1 from "../assets/BDA/bda-mockup-1.1.jpg"
 import AvicollectMockup1 from "../assets/Avicollect/avicollect-mockup-1.jpg"
 import ProjectImages from "./reusable-components/project-images"
 import { data, projectDescriptionData, newData } from "../constants/image-data"
@@ -86,7 +78,7 @@ const Project = ({ title, img, link, projectDescriptionData, children }) => {
   }
 
   return (
-    <div className="project" tabIndex={0}>
+    <div tabIndex={0}>
       {children}
       {/* <div className="project__right">
         <span className="project__right-title">Avicollect</span>

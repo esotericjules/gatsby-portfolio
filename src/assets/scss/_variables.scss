@@ -3,16 +3,45 @@ $white--01: #fff;
 $white--02: rgba(255, 255, 255, 0.8);
 $white--03: rgba(255, 255, 255, 0.5);
 $white--04: rgba(255, 255, 255, 0.3);
-$gold--01: rgb(220, 146, 2);
-$gold--02: #e0aa3e;
+$gold--01: rgb(255, 180, 5);
+$gold--03: rgba(220, 146, 2, 0.5);
+$gold--04: rgba(220, 146, 2, 0.7);
+$gold--02: rgb(224, 170, 62);
 
-$font--10: 1rem;
-$font--18: 1.8rem;
-$font--20: 2rem;
-$font--60: 6rem;
-$font--80: 8rem;
-$font--25: 2.5rem;
-$font--30: 3rem;
-$font--15: 1.5rem;
+$small--font: 1.4rem;
+$body--font: 1.6rem;
+$caption--font: 1.8rem;
+$title--font: 2rem;
+$h1--font: 4rem;
+$h1--font-big: 5rem;
+$h2--font: 2.5rem;
+$h3--font: 3rem;
+$section-title-font: 8rem;
+$project-name-font: 15rem;
 
 $br-5: 5px;
+
+$space--4: 0.4rem;
+$space--8: 0.8rem;
+$space--16: 1.6rem;
+$space--20: 2rem;
+$space--24: 2.4rem;
+$space--32: 3.2rem;
+$space--40: 4rem;
+$space--64: 6.4rem;
+$space--80: 8rem;
+$space--96: 9.6rem;
+
+$font-weight-thin: 100;
+$font-weight-small: 300;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$line-height-small: 1;
+$line-height-medium: 1.6;
+
+$font-family-default: "sans serif";
+$font-family-body: "lato";
+$font-family-body-secondary: "Italiana";
+$font-family-heading: "Raleway";
+$font-family-section-title: "Cinzel";

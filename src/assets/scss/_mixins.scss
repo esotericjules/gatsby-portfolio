@@ -164,13 +164,88 @@
 }
 
 .section-title {
-  // position: absolute;
-  // left: 7%;
-  // top: 5%;
-  font-size: $font--80;
-  color: $white--03;
+  --minFontSize: 4rem;
+  --maxFontSize: 8rem;
+  --scaler: 10vw;
+  font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+  // font-size: $section-title-font;
+  font-family: "$font-family-section-title";
+  margin-bottom: $space--64;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+  // color: $white--03;
 }
 
 @mixin section {
   padding: 0 0 0 0.7rem;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin text-spacing {
+  letter-spacing: 0.1rem;
+  word-spacing: 0.1rem;
+}
+
+@mixin small-font {
+  --minFontSize: 1rem;
+  --maxFontSize: 1.6rem;
+  --scaler: 7vw;
+  font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+}
+
+@mixin extra-small-font {
+  --minFontSize: 1rem;
+  --maxFontSize: 1.4rem;
+  --scaler: 7vw;
+  font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == extra-small {
+    @media only screen and (max-width: 43.75rem) {
+      @content;
+    } //700px
+  }
+  @if $breakpoint == small {
+    @media only screen and (max-width: 48rem) {
+      @content;
+    } //768px
+  }
+  @if $breakpoint == medium {
+    @media only screen and (max-width: 64rem) {
+      @content;
+    } //1024px
+  }
+  @if $breakpoint == big {
+    @media only screen and (max-width: 93.75rem) {
+      @content;
+    } //1500px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800
+  }
 }

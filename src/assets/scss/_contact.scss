@@ -1,0 +1,82 @@
+@import "./variables";
+@import "./mixins";
+
+.contact {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include respond(small) {
+    // height: 30vh;
+  }
+  &__msg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-family-body-secondary;
+    &-first {
+      margin: 0 auto;
+      --minFontSize: 1.2rem;
+      --maxFontSize: 8rem;
+      --scaler: 6vw;
+      font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+      font-family: $font-family-body-secondary;
+    }
+    &-second {
+      --minFontSize: 0.8rem;
+      --maxFontSize: 4rem;
+      --scaler: 4vw;
+      font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+      //   color: $gold--01;
+    }
+  }
+  &__social-links {
+    margin-top: $space--24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include respond(small) {
+      flex-direction: column;
+    }
+
+    &--number {
+      font-size: 20px;
+      font-family: $font-family-body;
+      @include respond(small) {
+        margin-top: $space--24;
+      }
+    }
+  }
+}
+
+ul.social-links {
+  list-style-type: none;
+  display: flex;
+}
+
+ul.social-links li {
+  //   font-size: 30px;
+  --minFontSize: 1rem;
+  --maxFontSize: 3rem;
+  --scaler: 6vw;
+  font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+  background-color: $gold--01;
+  padding: 10px;
+
+  border-radius: 5px;
+  &:not(:last-child) {
+    margin-right: $space--24;
+  }
+
+  //   width: 300px;
+  //   background-color: #fff;
+}
+
+ul.social-links li a {
+  color: $white--01;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

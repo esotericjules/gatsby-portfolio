@@ -1,12 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
-import BDA1 from "../assets/BDA/bda-1.png"
-import BDA2 from "../assets/BDA/bda-2.png"
-import BDA3 from "../assets/BDA/bda-3.png"
-import BDA4 from "../assets/BDA/bda-4.png"
-import BDA5 from "../assets/BDA/bda-5.png"
-import BDA6 from "../assets/BDA/bda-6.png"
-import BDA7 from "../assets/BDA/bda-7.png"
+import BDA1 from "../assets/BDA/landing.png"
+import BDA2 from "../assets/BDA/create-new-invoice.png"
+import BDA3 from "../assets/BDA/dashboard.png"
+import BDA4 from "../assets/BDA/search-invoice-white.png"
+import BDA5 from "../assets/BDA/user-mapping.png"
 
 import AVI1 from "../assets/Avicollect/avicollect-1.png"
 import AVI2 from "../assets/Avicollect/avicollect-2.png"
@@ -20,36 +18,31 @@ export const data = {
       id: 1,
       src: BDA1,
       alt: "EPIBS Welcome Screen",
+      setSize: false,
     },
     {
       id: 2,
       src: BDA2,
       alt: "EPIBS Dashboaed",
+      setSize: false,
     },
     {
       id: 3,
       src: BDA3,
       alt: "EPIBS Create Invoice",
+      setSize: false,
     },
     {
       id: 4,
       src: BDA4,
       alt: "EPIBS Search Invoice",
+      setSize: true,
     },
     {
       id: 5,
       src: BDA5,
       alt: "EPIBS extended menu",
-    },
-    {
-      id: 6,
-      src: BDA6,
-      alt: "EPIBS Create User",
-    },
-    {
-      id: 7,
-      src: BDA7,
-      alt: "EPIBS Workflow management",
+      setSize: false,
     },
   ],
   avicollect: [
@@ -148,14 +141,8 @@ export const combinedProjectData = [
           src: BDA5,
         },
         {
-          id: 6,
-          text: "Bskele Kkajak hhdjeej",
-          src: BDA6,
-        },
-        {
           id: 7,
           text: "fish is a cool hhdjeej",
-          src: BDA7,
         },
       ],
       descriptions: [

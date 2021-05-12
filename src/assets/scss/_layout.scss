@@ -2,7 +2,16 @@
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
   overflow-x: hidden;
+  padding: 5em;
   // gap: 20px;
+  // background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  //   url("../img-3.jpg") no-repeat;
+  // background-size: cover;
+  // background-position: 100px -30px;
+
+  @media screen and (max-device-width: 1000px) {
+    padding: 2em;
+  }
 }
 
 .layout > * {
@@ -15,8 +24,21 @@
 
 .content {
   grid-column: col-start / span 12;
+  position: relative;
 }
 
+.slide-right-panel {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 11;
+  // background-color: #1a1a1a;
+  // background-color: rgba(0, 0);
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 //.content {
 //  grid-area: content;
 //}

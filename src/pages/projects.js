@@ -2,10 +2,11 @@ import React from "react"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Projects from "../components/Projects"
+import ProjectDetail from "../components/reusable-components/project-detail"
 // ...GatsbyImageSharpFluid
 
 const ProjectsPage = () => {
-  return <h2>projects page</h2>
+  return <ProjectDetail />
 }
 
 export default ProjectsPage
